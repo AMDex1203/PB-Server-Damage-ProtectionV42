@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E84DC56B-839F-4927-91D6-F3151744F637}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Conexão</RootNamespace>
+    <AssemblyName>Conexão</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SWORD.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrashReporter.NET">
+      <HintPath>..\DLLS\CrashReporter.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\..\Downloads\Point Blank Source Finished\Core\bin\Debug\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigGA.cs" />
+    <Compile Include="Core\models\enums\Login\IsRealiP.cs" />
+    <Compile Include="data\configs\ConfigMaps.cs" />
+    <Compile Include="data\managers\AccountManager.cs" />
+    <Compile Include="data\managers\ClanManager.cs" />
+    <Compile Include="data\model\Account.cs" />
+    <Compile Include="data\sync\Auth_SyncNet.cs" />
+    <Compile Include="data\sync\client_side\Net_Clan_Sync.cs" />
+    <Compile Include="data\sync\client_side\Net_Friend_Sync.cs" />
+    <Compile Include="data\sync\client_side\Net_Player_Sync.cs" />
+    <Compile Include="data\sync\client_side\Net_Server_Warning.cs" />
+    <Compile Include="data\sync\server_side\SEND_REFRESH_ACC.cs" />
+    <Compile Include="data\sync\update\ClanInfo.cs" />
+    <Compile Include="FirewallSecurity.cs" />
+    <Compile Include="global\clientpacket\A_2666_REC.cs" />
+    <Compile Include="global\clientpacket\A_2678_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_CONFIG_SAVE_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_COPYRIGTH_ACK.cs" />
+    <Compile Include="global\clientpacket\BASE_LOGIN_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_SERVER_CHANGE_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_SERVER_LIST_REFRESH_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_USER_CONFIGS_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_USER_ENTER_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_USER_EXIT_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_USER_GIFTLIST_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_USER_INFO_REC.cs" />
+    <Compile Include="global\clientpacket\BASE_USER_INVENTORY_REC.cs" />
+    <Compile Include="global\clientpacket\TcpPacket.cs" />
+    <Compile Include="global\PROTOCOL_BASE_COPYRIGHT_PAK.cs" />
+    <Compile Include="global\ReceiveLoginPacket.cs" />
+    <Compile Include="global\serverpacket\AUTH_ACCOUNT_KICK_PAK.cs" />
+    <Compile Include="global\serverpacket\AUTH_WEB_CASH_PAK.cs" />
+    <Compile Include="global\serverpacket\A_2678_PAK.cs" />
+    <Compile Include="global\serverpacket\A_LOGIN_QUEUE_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_EXIT_URL_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_LOGIN_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_RANK_AWARDS_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_SERVER_CHANGE_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_SERVER_LIST_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_SERVER_LIST_REFRESH_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_CLAN_MEMBERS_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_CONFIG_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_EXIT_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_FRIENDS_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_GIFT_LIST_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_INFO_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_INVENTORY_PAK.cs" />
+    <Compile Include="global\serverpacket\BASE_USER_MESSAGES_PAK.cs" />
+    <Compile Include="global\serverpacket\CLAN_MEMBER_INFO_CHANGE_PAK.cs" />
+    <Compile Include="global\serverpacket\FRIEND_UPDATE_PAK.cs" />
+    <Compile Include="global\serverpacket\HELPER_PAK.cs" />
+    <Compile Include="global\serverpacket\SERVER_MESSAGE_ANNOUNCE_PAK.cs" />
+    <Compile Include="global\serverpacket\SERVER_MESSAGE_DISCONNECT_PAK.cs" />
+    <Compile Include="global\serverpacket\SERVER_MESSAGE_ERROR_PAK.cs" />
+    <Compile Include="global\serverpacket\SERVER_MESSAGE_EVENT_QUEST_PAK.cs" />
+    <Compile Include="global\serverpacket\SERVER_MESSAGE_EVENT_RANKUP_PAK.cs" />
+    <Compile Include="global\serverpacket\SERVER_MESSAGE_ITEM_RECEIVE_PAK.cs" />
+    <Compile Include="LoggerGA.cs" />
+    <Compile Include="LoginClient.cs" />
+    <Compile Include="LoginManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core\server_core.csproj">
+      <Project>{bd887f8a-1030-49bc-9046-2b7784d8fe1b}</Project>
+      <Name>server_core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SWORD.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\vocaluxe.dependencies.netfwtypelib.1.0.1\build\vocaluxe.dependencies.netfwtypelib.targets" Condition="Exists('..\..\packages\vocaluxe.dependencies.netfwtypelib.1.0.1\build\vocaluxe.dependencies.netfwtypelib.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\vocaluxe.dependencies.netfwtypelib.1.0.1\build\vocaluxe.dependencies.netfwtypelib.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\vocaluxe.dependencies.netfwtypelib.1.0.1\build\vocaluxe.dependencies.netfwtypelib.targets'))" />
+  </Target>
+</Project>
